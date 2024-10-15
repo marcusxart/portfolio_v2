@@ -17,11 +17,13 @@ const Container = styled(Link)`
   justify-content: center;
   height: 42px;
   padding: 0px 30px;
+  font-size: 13px;
   line-height: 40px;
   border: 1px solid var(--btn-border);
   color: var(--link-text);
   &.active {
     background-color: var(--accent);
+    border-color: var(--accent);
   }
   &:hover {
     background-color: var(--accent);
