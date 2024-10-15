@@ -4,7 +4,7 @@ import Button from "../components/button";
 
 const Home = () => {
   const info = [
-    "Full Stack JavaScript Developer.",
+    "Full stack JavaScript developer.",
     "Based in Nigeria.",
     "Enjoys exploring new technologies.",
   ];
@@ -31,7 +31,7 @@ const Home = () => {
 
 export default Home;
 
-const Container = styled.div`
+export const Container = styled.div`
   flex: 1;
   display: grid;
   place-items: center;

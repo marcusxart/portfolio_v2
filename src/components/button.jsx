@@ -13,6 +13,7 @@ export default Button;
 
 const Container = styled(Link)`
   display: inline-flex;
+  width: fit-content;
   align-items: center;
   justify-content: center;
   height: 42px;
