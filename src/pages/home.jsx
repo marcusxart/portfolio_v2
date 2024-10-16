@@ -31,7 +31,7 @@ const Home = () => {
 
 export default Home;
 
-export const Container = styled.div`
+const Container = styled.div`
   flex: 1;
   display: grid;
   place-items: center;

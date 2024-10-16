@@ -22,6 +22,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io";
 import {
   SiBabel,
+  SiFramer,
   SiMongodb,
   SiMongoose,
   SiMysql,
@@ -79,7 +80,8 @@ const About = () => {
     { text: "HTML5", icon: FaHtml5 },
     { text: "CSS3", icon: FaCss3Alt },
     { text: "Tailwind CSS", icon: RiTailwindCssFill },
-    { text: "Javascript", icon: IoLogoJavascript },
+    { text: "Framer", icon: SiFramer },
+    { text: "JavaScript", icon: IoLogoJavascript },
     { text: "React Js", icon: FaReact },
     { text: "Redux", icon: SiRedux },
     { text: "Next Js", icon: SiNextdotjs },
@@ -160,7 +162,7 @@ const About = () => {
 
 export default About;
 
-const Container = styled.div`
+export const Container = styled.div`
   min-height: 100vh;
   padding: 0 80px 150px;
   max-width: 1060px;
@@ -171,7 +173,7 @@ const Container = styled.div`
   gap: 140px;
 `;
 
-const Section = styled.div`
+export const Section = styled.div`
   h2 {
     text-transform: uppercase;
     color: var(--link-text);
@@ -254,14 +256,14 @@ const ServicesGrid = styled.ul`
 const SkillGrid = styled.ul`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 40px;
-  justify-content: space-between;
   li {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
+
     span {
       color: var(--link-text);
       font-size: 13px;

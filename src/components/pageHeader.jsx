@@ -6,7 +6,7 @@ const PageHeader = ({ title }) => {
   return (
     <Container>
       <Wrapper>
-        <h1 className="glitch" data-text="About">
+        <h1 className="glitch" data-text={title}>
           {title}
         </h1>
         <p>
