@@ -285,9 +285,10 @@ const ServicesGrid = styled.ul`
 const SkillGrid = styled.ul`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 20px;
   @media screen and (min-width: 840px) {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 40px;
   }
   li {
