@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import classnames from "classnames";
 import Button from "./button";
-import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { Squash as Hamburger } from "hamburger-react";
