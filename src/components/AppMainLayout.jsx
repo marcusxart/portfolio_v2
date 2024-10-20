@@ -4,17 +4,31 @@ import classnames from "classnames";
 import Button from "./button";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { Squash as Hamburger } from "hamburger-react";
 
 const AppMainLayout = () => {
-  const navLinks = ["home", "about", "portfoilo", "blog"];
+  const navLinks = ["home", "about", "portfoilo"];
+  const [toggle, setToggle] = useState(false);
   const date = new Date();
 
   const socials = [
-    { value: "/", icon: FaLinkedin },
-    { value: "/", icon: FaGithub },
-    { value: "/", icon: FaXTwitter },
+    {
+      value: "https://www.linkedin.com/in/chinonso-emerenwa/",
+      icon: FaLinkedin,
+    },
+    { value: "https://github.com/marcusxart", icon: FaGithub },
+    // { value: "/", icon: FaXTwitter },
   ];
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    setToggle(false);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  }, [pathname]);
 
   return (
     <Container>
@@ -23,29 +37,60 @@ const AppMainLayout = () => {
       <div className="line line-3"></div>
       <div className="line line-4"></div>
       <Nav>
-        <Link className="logo">Chinonso.</Link>
-        <ul>
-          {navLinks?.map((link) => (
-            <li
-              key={link}
-              className={classnames({
-                active:
-                  (link === "home" && pathname === "/") ||
-                  pathname.includes(link),
-              })}
-            >
-              <Link to={link === "home" ? "/" : `/${link}`}>{link}</Link>
+        <div className="nav_wrapper">
+          <Link className="logo">Chinonso.</Link>
+          <ul>
+            {navLinks?.map((link) => (
+              <li
+                key={link}
+                className={classnames({
+                  active:
+                    (link === "home" && pathname === "/") ||
+                    pathname.includes(link),
+                })}
+              >
+                <Link to={link === "home" ? "/" : `/${link}`}>{link}</Link>
+              </li>
+            ))}
+            <li>
+              <Button
+                to="/contacts"
+                className={classnames("btn", {
+                  active: pathname.includes("contacts"),
+                })}
+                text="Contacts"
+              />
             </li>
-          ))}
-          <li>
-            <Button
-              className={classnames("btn", {
-                active: pathname.includes("contact"),
-              })}
-              text="Contact"
-            />
-          </li>
-        </ul>
+          </ul>
+          <div className="menu">
+            <Hamburger toggled={toggle} toggle={setToggle} />
+          </div>
+        </div>
+        {toggle && (
+          <MobileList>
+            {navLinks?.map((link) => (
+              <li
+                key={link}
+                className={classnames({
+                  active:
+                    (link === "home" && pathname === "/") ||
+                    pathname.includes(link),
+                })}
+              >
+                <Link to={link === "home" ? "/" : `/${link}`}>{link}</Link>
+              </li>
+            ))}
+            <li>
+              <Button
+                to="/contacts"
+                className={classnames("btn", {
+                  active: pathname.includes("contacts"),
+                })}
+                text="Contacts"
+              />
+            </li>
+          </MobileList>
+        )}
       </Nav>
       <Footer>
         <p>&copy; {date.getFullYear()} Chinonso Emerenwa</p>
@@ -104,7 +149,6 @@ const Container = styled.div`
 `;
 
 const Nav = styled.div`
-  display: flex;
   position: fixed;
   z-index: 10;
   top: 0;
@@ -112,31 +156,82 @@ const Nav = styled.div`
   right: 0;
   background: var(--body-bg);
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
   padding: 60px 65px 15px;
+
   .logo {
     color: var(--link-text);
     font-weight: 500;
     font-size: 20px;
     font-family: "Lobster", sans-serif;
   }
-  & > ul {
-    display: flex;
-    gap: 50px;
-    align-items: center;
 
-    li {
-      text-transform: capitalize;
-      font-size: 13px;
-      color: var(--link-text);
-      &.active {
-        color: var(--accent);
-      }
-      &:hover {
-        color: var(--accent);
+  .nav_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .menu {
+      .hamburger-react:hover {
+        div {
+          div {
+            background-color: var(--accent) !important;
+          }
+        }
       }
     }
+    & > ul {
+      display: none;
+      gap: 50px;
+      align-items: center;
+
+      li {
+        text-transform: capitalize;
+        font-size: 13px;
+        transition: var(--smooth);
+        color: var(--link-text);
+        &.active {
+          color: var(--accent);
+        }
+        &:hover {
+          color: var(--accent);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 840px) {
+    .nav_wrapper {
+      .menu {
+        display: none;
+      }
+      & > ul {
+        display: flex;
+      }
+    }
+  }
+`;
+
+const MobileList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+
+  li {
+    text-transform: capitalize;
+    font-size: 13px;
+    transition: var(--smooth);
+    color: var(--link-text);
+    &.active {
+      color: var(--accent);
+    }
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  @media screen and (min-width: 840px) {
+    display: none;
   }
 `;
 
@@ -155,11 +250,26 @@ const Footer = styled.footer`
   > p {
     font-size: 11px;
     color: #999;
+    display: none;
+    @media screen and (min-width: 840px) {
+      display: block;
+    }
   }
   > ul {
     display: flex;
     gap: 12px;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    @media screen and (min-width: 840px) {
+      justify-content: flex-start;
+      width: fit-content;
+    }
+    svg {
+      path {
+        transition: var(--smooth);
+      }
+    }
     svg:hover {
       path {
         fill: var(--accent);

@@ -22,6 +22,7 @@ const Container = styled(Link)`
   line-height: 40px;
   border: 1px solid var(--btn-border);
   color: var(--link-text);
+  transition: var(--smooth);
   &.active {
     background-color: var(--accent);
     border-color: var(--accent);

@@ -2,15 +2,14 @@ import { BsFillMouse2Fill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const PageHeader = ({ title }) => {
+const BlogHeader = ({ title }) => {
   return (
     <Container>
       <Wrapper>
-        <h1 className="glitch" data-text={title}>
-          {title}
-        </h1>
+        <span>14 June 2016</span>
+        <h1>{title}</h1>
         <p>
-          <Link to="/">Home</Link> / <span>{title}</span>
+          <Link to="/">Home</Link> / <span>Blog</span>
         </p>
       </Wrapper>{" "}
       <span>
@@ -20,10 +19,10 @@ const PageHeader = ({ title }) => {
   );
 };
 
-export default PageHeader;
+export default BlogHeader;
 
 const Container = styled.header`
-  padding: 80px 40px 117px;
+  padding: 60px 40px 117px;
   height: 100dvh;
   width: 100%;
   display: grid;
@@ -32,7 +31,7 @@ const Container = styled.header`
 
   > span {
     position: absolute;
-    bottom: 130px;
+    bottom: 100px;
     animation: bounce 3s infinite;
     svg {
       path {
@@ -59,6 +58,29 @@ const Container = styled.header`
 
 const Wrapper = styled.div`
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > span {
+    display: grid;
+    width: fit-content;
+    font-size: 11px;
+    font-weight: 500;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0 5px;
+    height: 20px;
+    line-height: 18px;
+    place-items: center;
+  }
+  h1 {
+    letter-spacing: 0.04em;
+    font-size: 60px;
+    color: var(--link-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 1020px;
+  }
 
   p {
     font-size: 13px;

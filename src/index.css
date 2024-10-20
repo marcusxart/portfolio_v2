@@ -10,6 +10,7 @@
 
   /* fonts */
   --font-roboto: "Roboto Mono", monospace;
+  --smooth: all 0.3s ease 0s;
 }
 
 *,
@@ -49,21 +50,22 @@ button {
   text-transform: uppercase;
   padding: 10px;
   letter-spacing: 0.04em;
-  font-size: 60px;
+  font-size: 40px;
   color: var(--link-text);
   font-weight: 700;
   text-transform: uppercase;
+  max-width: 1020px;
 }
 
 .glitch:before,
 .glitch:after {
   content: attr(data-text);
   letter-spacing: 0.04em;
-  font-size: 60px;
+  font-size: 40px;
   position: absolute;
+  max-width: 1020px;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   top: 0;
   padding: 10px;
 }
@@ -72,6 +74,16 @@ button {
   left: 3px;
   text-shadow: -2px 0 red;
   animation: glitch-1 2s linear infinite reverse;
+}
+
+@media screen and (min-width: 840px) {
+  .glitch {
+    font-size: 60px;
+  }
+  .glitch:before,
+  .glitch:after {
+    font-size: 60px;
+  }
 }
 
 .glitch:after {

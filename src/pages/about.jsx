@@ -164,13 +164,17 @@ export default About;
 
 export const Container = styled.div`
   min-height: 100vh;
-  padding: 0 80px 150px;
+  padding: 0 65px 150px;
   max-width: 1060px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 140px;
+  gap: 80px;
+  @media screen and (min-width: 840px) {
+    padding: 0 80px 150px;
+    gap: 140px;
+  }
 `;
 
 export const Section = styled.div`
@@ -183,19 +187,36 @@ export const Section = styled.div`
     font-weight: 500;
     position: relative;
     box-shadow: inset 0 -6px 0 #666;
-    margin-bottom: 40px;
+    margin: 0 0 32px;
+    @media screen and (min-width: 440px) {
+      margin: 0 0 40px;
+    }
   }
 `;
 
 const GridInfo = styled.div`
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border-radius: 500%;
+  }
+  @media screen and (min-width: 440px) {
+    display: grid;
+    align-items: flex-start;
+    gap: 30px;
+    text-align: left;
+    grid-template-columns: 80px 1fr;
+  }
+  @media screen and (min-width: 600px) {
+    grid-template-columns: 100px 1fr;
+    img {
+      width: 100px;
+      height: 100px;
+    }
   }
 `;
 
@@ -203,18 +224,24 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 30px;
+  gap: 24px;
   > p {
     font-size: 13px;
     line-height: 23px;
+  }
+  @media screen and (min-width: 440px) {
+    gap: 30px;
   }
 `;
 
 const BioGroup = styled.ul`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 12px;
+  /* @media screen and (min-width: 840px) {
+    grid-template-columns: repeat(3, 1fr);
+  } */
   li {
     display: flex;
     align-items: center;
@@ -231,9 +258,11 @@ const BioGroup = styled.ul`
 const ServicesGrid = styled.ul`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  gap: 50px 32px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+  @media screen and (min-width: 840px) {
+    gap: 50px 32px;
+  }
   li {
     > div {
       display: flex;
@@ -257,7 +286,10 @@ const SkillGrid = styled.ul`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 40px;
+  gap: 20px;
+  @media screen and (min-width: 840px) {
+    gap: 40px;
+  }
   li {
     display: flex;
     flex-direction: column;
@@ -267,6 +299,7 @@ const SkillGrid = styled.ul`
     span {
       color: var(--link-text);
       font-size: 13px;
+      text-align: center;
     }
   }
 `;
