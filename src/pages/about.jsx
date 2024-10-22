@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PageHeader from "../components/pageHeader";
-import profile from "../assets/images/profile.jpg";
+import profile from "../assets/images/profile.png";
 import Button from "../components/button";
 import { FaCalendarAlt, FaUserAlt } from "react-icons/fa";
 import {
