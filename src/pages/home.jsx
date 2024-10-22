@@ -28,7 +28,7 @@ const Home = () => {
           text="Download CV"
           className="active"
           target="_blank"
-          to="https://drive.google.com/file/d/1D3C8ywd5-v4ff0k1U9lKMs7ccnmZJhhk/view?usp=sharing"
+          to="https://drive.google.com/file/d/1cTHtVN4Sni0_zswGFNa8sHrdgcR0Feyw/view?usp=sharing"
         />
       </Wrapper>
     </Container>
