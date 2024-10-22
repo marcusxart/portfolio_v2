@@ -126,7 +126,12 @@ const About = () => {
                   </li>
                 ))}
               </BioGroup>
-              <Button text="Download CV" className="active" />
+              <Button
+                text="Download CV"
+                className="active"
+                target="_blank"
+                to="https://drive.google.com/file/d/1D3C8ywd5-v4ff0k1U9lKMs7ccnmZJhhk/view?usp=sharing"
+              />
             </Info>
           </GridInfo>
         </Section>

@@ -11,37 +11,37 @@ import ProjectCard from "../components/projectCard";
 const Portfoilo = () => {
   const works = [
     {
-      skill: "Full stack",
+      skill: "Full stack engineer",
       title: "Learngual",
       date: "Jun 2023 - Sep 2024",
       img: learngual,
       link: "https://learngual.com/",
     },
     {
-      skill: "Front-end",
+      skill: "Frontend engineer",
       title: "PouchFi",
       date: "Mar 2023 - Nov 2023",
       img: pouchfi,
       link: "https://www.pouchfi.io/",
     },
     {
-      skill: "Front-end",
+      skill: "Frontend engineer",
       title: "Azmarineberg limited",
       date: "Jan 2023 - Mar 2023",
       img: azmarineberg,
       link: "https://www.azmarineberg.com/",
     },
     {
-      skill: "Front-end",
+      skill: "Frontend engineer",
       title: "NFT NG",
       date: "Apr 2022 - Oct 2022",
       img: ntfng,
       link: "https://www.nftng.io/",
     },
     {
-      skill: "Front-end",
+      skill: "Frontend engineer",
       title: "Harmonic Studioz",
-      date: "Mar 2021 - Oct 2023",
+      date: "Mar 2021 - Aug 2023",
       img: harmonic,
     },
   ];

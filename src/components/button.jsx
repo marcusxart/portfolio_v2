@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Button = ({ text = "text", to, className }) => {
+const Button = ({ text = "text", to, className, target }) => {
   return (
-    <Container className={className} to={to}>
+    <Container className={className} to={to} target={target}>
       {text}
     </Container>
   );
