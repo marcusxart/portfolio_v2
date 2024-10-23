@@ -15,7 +15,12 @@ const Contacts = () => {
   console.log(form);
   const bio = [
     { text: "+2349036909617", icon: MdWifiCalling3, title: "Phone" },
-    { text: "cemeji64@gmail.com", icon: MdEmail, link: true, title: "Email" },
+    {
+      text: "chinonsoemerenwa@gmail.com",
+      icon: MdEmail,
+      link: true,
+      title: "Email",
+    },
     { text: "Lagos, Nigeria", icon: FaLocationDot, title: "Location" },
   ];
 
@@ -24,7 +29,7 @@ const Contacts = () => {
     const { name, email, message } = form;
     const subject = encodeURIComponent(`Message from ${name}`);
     const body = encodeURIComponent(`Email: ${email}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:cemeji64@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:chinonsoemerenwa@gmail.com?subject=${subject}&body=${body}`;
   };
   return (
     <>

@@ -135,7 +135,7 @@ const Container = styled.div`
   }
   .line-1,
   .line-2 {
-    width: 30px;
+    width: 20px;
     top: 0;
     height: 100dvh;
   }
@@ -144,7 +144,18 @@ const Container = styled.div`
     width: 100%;
     left: 0;
     right: 0;
-    height: 30px;
+    height: 20px;
+  }
+
+  @media screen and (min-width: 840px) {
+    .line-1,
+    .line-2 {
+      width: 30px;
+    }
+    .line-3,
+    .line-4 {
+      height: 30px;
+    }
   }
 `;
 
@@ -156,7 +167,7 @@ const Nav = styled.div`
   right: 0;
   background: var(--body-bg);
   width: 100%;
-  padding: 60px 65px 15px;
+  padding: 50px 55px 15px;
 
   .logo {
     color: var(--link-text);
@@ -199,6 +210,7 @@ const Nav = styled.div`
   }
 
   @media screen and (min-width: 840px) {
+    padding: 60px 65px 15px;
     .nav_wrapper {
       .menu {
         display: none;
@@ -241,12 +253,16 @@ const Footer = styled.footer`
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 15px 65px 60px;
+  padding: 15px 55px 50px;
   display: flex;
   background: var(--body-bg);
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  @media screen and (min-width: 840px) {
+    padding: 15px 65px 60px;
+  }
   > p {
     font-size: 11px;
     color: #999;

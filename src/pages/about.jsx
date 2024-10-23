@@ -39,7 +39,7 @@ const About = () => {
     { text: "Chinonso Emerenwa", icon: FaUserAlt },
     { text: "Born on 25 April, 1997", icon: FaCalendarAlt },
     { text: "Lagos, Nigeria", icon: FaLocationDot },
-    { text: "cemeji64@gmail.com", icon: MdEmail },
+    { text: "chinonsoemerenwa@gmail.com", icon: MdEmail },
     { text: "+2349036909617", icon: MdWifiCalling3 },
   ];
 
@@ -130,7 +130,7 @@ const About = () => {
                 text="Download CV"
                 className="active"
                 target="_blank"
-                to="https://drive.google.com/file/d/1pQIAA9-VOIKQT7zFoPRlAd2TDZSp2iDs/view?usp=sharing"
+                to="https://drive.google.com/file/d/17Ba8gTc1UiFOrrrsr9fBUkFTfk8PJiiR/view?usp=sharing"
               />
             </Info>
           </GridInfo>
